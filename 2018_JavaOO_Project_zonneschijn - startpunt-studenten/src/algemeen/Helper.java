@@ -7,16 +7,16 @@ package algemeen;
 public class Helper {
 
     /**
-     * Helper-methode om getallen af te ronden.
+     * Helper-method to round numbers.
      *
-     * @param waarde - waarde die afgerondt moet worden.
-     * @param aantalNaNul - aantal gewenste beduidende cijfers.
-     * @return - de afgeronde waarde wordt gereturned.
+     * @param value - value to be rounded.
+     * @param decimals - amount of significant figures.
+     * @return - the rounded value.
      */
-    public static double afronden(double waarde, double aantalNaNul) {
-        double afronding = Math.pow(10.0, aantalNaNul);
-        if (aantalNaNul != 0) {
-            return Math.round(waarde * afronding) / afronding;
+    public static double round(double value, double decimals) {
+        double round = Math.pow(10.0, decimals);
+        if (decimals != 0) {
+            return Math.round(value * round) / round;
         } else {
             throw new IllegalArgumentException("Tweede parameter was 0.");
         }

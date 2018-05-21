@@ -1,6 +1,6 @@
 package presentatie.JavaOO_dl1;
 
-import logica.DagPrestatie;
+import logica.DayPrestation;
 
 /**
  *
@@ -14,12 +14,12 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         double test = 0;
-        DagPrestatie vandaag = new DagPrestatie();
-        vandaag.setMeetwaarden();
-        vandaag.berekenDagproductie();
-        vandaag.setEersteEnLaatsteUur();
-        vandaag.berekentotaleTijd();
-        vandaag.setHoogsteProductie();
+        DayPrestation vandaag = new DayPrestation();
+        vandaag.setMeasurements();
+        vandaag.setDayProduction();
+        vandaag.setFirstAndLastHour();
+        vandaag.setTotalTime();
+        vandaag.setHighestProduction();
         System.out.println(vandaag);
     }
 }
