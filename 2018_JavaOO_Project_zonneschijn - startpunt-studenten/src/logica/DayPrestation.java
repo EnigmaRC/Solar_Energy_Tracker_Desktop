@@ -47,7 +47,7 @@ public class DayPrestation {
                 }
                 break;
             case "dl2": {
-                Data_dl2.dataDeel2 = Data_dl2.setDataDeel2();
+                Data_dl2.dataDeel2 = Data_dl2.parseDataDeel2();
                 for (int i = 1; i < Data_dl2.dataDeel2.length; i++) {
                     if (Data_dl2.dataDeel2[i].length == 2 && Double.parseDouble(Data_dl2.dataDeel2[i][1]) > 0) {
                         LocalTime time = LocalTime.parse(Data_dl2.dataDeel2[i][0]);
@@ -55,7 +55,6 @@ public class DayPrestation {
                         this.measurements.add(new ProductionUnit(time, measurement));
                     }
                 }
-
             }
             break;
         }
