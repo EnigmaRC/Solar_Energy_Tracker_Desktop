@@ -26,8 +26,6 @@ public class DayPrestation {
     public DayPrestation() {
         this.date = LocalDate.now();
         this.measurements = new ArrayList<>();
-        this.dayProduction = 0;
-        this.highestProduction = 0;
     }
 
     /**
@@ -89,8 +87,6 @@ public class DayPrestation {
             }
         }
     }
-    
-    
 
     /**
      * Calculates the total amount of CO2 reduction for that day.
