@@ -5,12 +5,14 @@ package presentatie.JavaOO_dl2;
  * @author Olivier PC
  */
 public class Analysis_1Day extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form Analysis_1Day
      */
     public Analysis_1Day() {
         initComponents();
+        this.graph_1Day2.setFrame(this);
     }
 
     /**
@@ -22,83 +24,41 @@ public class Analysis_1Day extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelDate = new javax.swing.JLabel();
-        jTextFieldDate = new javax.swing.JTextField();
-        jButtonProcess = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaDayProduction = new javax.swing.JTextArea();
-        graph_1Day1 = new presentatie.JavaOO_dl2.Graph_1Day();
+        graph_1Day2 = new presentatie.JavaOO_dl2.Graph_1Day();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(600, 380));
 
-        jLabelDate.setText("Datum (YYYY-MM-DD):");
-
-        jTextFieldDate.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextFieldDate.setText("YYYY-MM-DD");
-        jTextFieldDate.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextFieldDateFocusGained(evt);
-            }
-        });
-
-        jButtonProcess.setText("Verwerk");
-
-        jTextAreaDayProduction.setColumns(20);
-        jTextAreaDayProduction.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaDayProduction);
-
-        javax.swing.GroupLayout graph_1Day1Layout = new javax.swing.GroupLayout(graph_1Day1);
-        graph_1Day1.setLayout(graph_1Day1Layout);
-        graph_1Day1Layout.setHorizontalGroup(
-            graph_1Day1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        javax.swing.GroupLayout graph_1Day2Layout = new javax.swing.GroupLayout(graph_1Day2);
+        graph_1Day2.setLayout(graph_1Day2Layout);
+        graph_1Day2Layout.setHorizontalGroup(
+            graph_1Day2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 580, Short.MAX_VALUE)
         );
-        graph_1Day1Layout.setVerticalGroup(
-            graph_1Day1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 158, Short.MAX_VALUE)
+        graph_1Day2Layout.setVerticalGroup(
+            graph_1Day2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 289, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(graph_1Day1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabelDate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonProcess)
-                        .addGap(0, 311, Short.MAX_VALUE)))
+                .addComponent(graph_1Day2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDate)
-                    .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonProcess))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(graph_1Day1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(graph_1Day2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldDateFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldDateFocusGained
-        // TODO add your handling code here:
-        this.jTextFieldDate.selectAll();
-    }//GEN-LAST:event_jTextFieldDateFocusGained
 
     /**
      * @param args the command line arguments
@@ -136,11 +96,6 @@ public class Analysis_1Day extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private presentatie.JavaOO_dl2.Graph_1Day graph_1Day1;
-    private javax.swing.JButton jButtonProcess;
-    private javax.swing.JLabel jLabelDate;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextAreaDayProduction;
-    private javax.swing.JTextField jTextFieldDate;
+    private presentatie.JavaOO_dl2.Graph_1Day graph_1Day2;
     // End of variables declaration//GEN-END:variables
 }
