@@ -8,18 +8,11 @@ import logica.DayPrestation;
  */
 public class Graph_1Day extends javax.swing.JPanel {
 
-    private DayPrestation dayPrestation;
-    private Analysis_1Day parentFrame;
-
     /**
      * Creates new form Graph_1Day
      */
     public Graph_1Day() {
         initComponents();
-    }
-
-    public void setFrame(Analysis_1Day f) {
-        this.parentFrame = f;
     }
 
     private void setDayPrestation() {
