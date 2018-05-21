@@ -95,6 +95,10 @@ public class DayPrestation {
         this.co2reduction = Helper.round(this.dayProduction * this.SAVEDCO2, 3);
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
     @Override
     public String toString() {
         return "Dagproductie van " + this.date + " = " + this.dayProduction

@@ -7,16 +7,16 @@ import logica.DayPrestation;
  * @author Olivier PC
  */
 public class Graph_1Day extends javax.swing.JPanel {
+    private DayPrestation dayPrestation;
 
     /**
      * Creates new form Graph_1Day
      */
     public Graph_1Day() {
         initComponents();
-    }
-
-    private void setDayPrestation() {
-
+        dayPrestation = new DayPrestation();
+        dayPrestation.setMeasurements();
+        this.jTextFieldDate.setText(dayPrestation.getDate().toString());
     }
 
     /**
