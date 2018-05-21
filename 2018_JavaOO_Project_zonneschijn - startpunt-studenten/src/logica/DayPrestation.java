@@ -31,11 +31,25 @@ public class DayPrestation {
     /**
      * Fills the ArrayList with measurements from throughout the day.
      */
-    public void setMeasurements() {
-        for (String[] DEFAULT_DATA : DataDefault.DEFAULT_DATA) {
-            LocalTime time = LocalTime.parse(DEFAULT_DATA[0]);
-            double measurement = Double.parseDouble(DEFAULT_DATA[1]);
-            this.measurements.add(new ProductionUnit(time, measurement));
+    public void setMeasurements(String origin) {
+        switch (origin) {
+            case "dl1":
+                for (String[] DEFAULT_DATA : DataDefault.DEFAULT_DATA) {
+                    LocalTime time = LocalTime.parse(DEFAULT_DATA[0]);
+                    double measurement = Double.parseDouble(DEFAULT_DATA[1]);
+                    this.measurements.add(new ProductionUnit(time, measurement));
+                }
+                break;
+            case "dl2":{
+                for (String[] DEFAULT_DATA : DataDefault.DEFAULT_DATA) {
+                    LocalTime time = LocalTime.parse(DEFAULT_DATA[0]);
+                    double measurement = Double.parseDouble(DEFAULT_DATA[1]);
+                    if (measurement != 0) { //ignore 0-values
+                        this.measurements.add(new ProductionUnit(time, measurement));
+                    }
+                }
+                break;
+            }
         }
     }
 

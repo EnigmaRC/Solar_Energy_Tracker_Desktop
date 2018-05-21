@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         DayPrestation vandaag = new DayPrestation();
-        vandaag.setMeasurements();
+        vandaag.setMeasurements("dl1");
         vandaag.setDayProduction();
         vandaag.setFirstAndLastHour();
         vandaag.setTotalTime();
