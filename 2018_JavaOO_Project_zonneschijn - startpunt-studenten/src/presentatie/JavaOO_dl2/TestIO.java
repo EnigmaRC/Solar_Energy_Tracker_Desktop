@@ -19,15 +19,18 @@ public class TestIO {
     }
 
     private void start() {
+        /*
         try {
-            String bestand = "C://Users/Olivier PC/Desktop/Legacy_Of_Jerome.txt";
-            //String bestand = "C://Users/Olivier PC/Dropbox/2e semester/Java (OOP)/Project/2018_JavaOO_Project_zonneschijn - startpunt-studenten/data/Metingen 2017-12/Energie_en_vermogen_Dag_2017-12-10";
+            String file = "C://Users/Olivier PC/Desktop/Legacy_Of_Jerome.txt"; // path goes here (slashes must be forward slahes).
+            TextFile.write(file, "test"); // Add test to the file given as parameter.
             
-            String[] alles = TextFile.readLines("C://Users/Olivier PC/Desktop/Legacy_Of_Jerome.txt");
-            System.out.println(alles);
+            String allInFile = TextFile.read(file); // Reads everything as one string.
+            String[] all = TextFile.readLines(file); // Reads every line individually and adds it to an array of strings.
+            System.out.println(file);
         } catch (IOException io) {
             System.out.println("error");
         }
+         */
     }
-    
+
 }
