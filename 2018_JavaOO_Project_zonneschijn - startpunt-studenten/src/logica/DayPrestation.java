@@ -78,7 +78,7 @@ public class DayPrestation {
     }
 
     /**
-     * Goes through all the measurements and figures out at what time the 
+     * Goes through all the measurements and figures out at what time the
      * installation was most effective.
      */
     public void setHighestProduction() {
@@ -89,10 +89,11 @@ public class DayPrestation {
             }
         }
     }
+    
+    
 
     /**
      * Calculates the total amount of CO2 reduction for that day.
-     * @return 
      */
     public void setCO2Reduction() {
         this.co2reduction = Helper.round(this.dayProduction * this.SAVEDCO2, 3);

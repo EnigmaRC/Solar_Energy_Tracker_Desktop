@@ -19,6 +19,7 @@ public class Main {
         vandaag.setFirstAndLastHour();
         vandaag.setTotalTime();
         vandaag.setHighestProduction();
+        vandaag.setCO2Reduction();
         System.out.println(vandaag);
     }
 }
