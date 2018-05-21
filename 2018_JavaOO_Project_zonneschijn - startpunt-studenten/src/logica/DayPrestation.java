@@ -2,6 +2,7 @@ package logica;
 
 import algemeen.Helper;
 import data.DataDefault;
+import data.Data_dl2;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -28,6 +29,11 @@ public class DayPrestation {
         this.measurements = new ArrayList<>();
     }
 
+    public DayPrestation(String date) {
+        this.date = LocalDate.parse(date);
+        this.measurements = new ArrayList<>();
+    }
+
     /**
      * Fills the ArrayList with measurements from throughout the day.
      */
@@ -40,16 +46,18 @@ public class DayPrestation {
                     this.measurements.add(new ProductionUnit(time, measurement));
                 }
                 break;
-            case "dl2":{
-                for (String[] DEFAULT_DATA : DataDefault.DEFAULT_DATA) {
-                    LocalTime time = LocalTime.parse(DEFAULT_DATA[0]);
-                    double measurement = Double.parseDouble(DEFAULT_DATA[1]);
-                    if (measurement != 0) { //ignore 0-values
+            case "dl2": {
+                Data_dl2.dataDeel2 = Data_dl2.setDataDeel2();
+                for (int i = 1; i < Data_dl2.dataDeel2.length; i++) {
+                    if (Data_dl2.dataDeel2[i].length == 2 && Double.parseDouble(Data_dl2.dataDeel2[i][1]) > 0) {
+                        LocalTime time = LocalTime.parse(Data_dl2.dataDeel2[i][0]);
+                        double measurement = Double.parseDouble(Data_dl2.dataDeel2[i][1]);
                         this.measurements.add(new ProductionUnit(time, measurement));
                     }
                 }
-                break;
+
             }
+            break;
         }
     }
 

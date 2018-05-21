@@ -14,7 +14,7 @@ public class Graph_1Day extends javax.swing.JPanel {
      */
     public Graph_1Day() {
         initComponents();
-        dayPrestation = new DayPrestation();
+        dayPrestation = new DayPrestation("2017-12-10");
         dayPrestation.setMeasurements("dl2");
         this.jTextFieldDate.setText(dayPrestation.getDate().toString());
     }
