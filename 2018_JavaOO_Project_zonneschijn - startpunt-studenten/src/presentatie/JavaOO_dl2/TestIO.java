@@ -33,12 +33,19 @@ public class TestIO {
          */
         
         try {
-            String bestand = "C:/Users/Olivier PC/Dropbox/2e semester/Java (OOP)/Project/2018_JavaOO_Project_zonneschijn - startpunt-studenten/data/Metingen 2017-12/Energie_en_vermogen_Dag_2017-12-10.csv";            
-            String allInFile = TextFile.read(bestand); // Reads everything as one string.
-            String[] splitFile = allInFile.split(";");
-            for (int i = 0; i < splitFile.length; i++) {
-                System.out.println(splitFile[i]);                
+            String filePath = "C:/Users/Olivier PC/Dropbox/2e semester/Java (OOP)/Project/2018_JavaOO_Project_zonneschijn - startpunt-studenten/data/Metingen 2017-12/Energie_en_vermogen_Dag_2017-12-10.csv";            
+            String[] file = TextFile.readLines(filePath);
+            String[][] timeAndMeasurements = new String[file.length][]; 
+            for (int i = 0; i < timeAndMeasurements.length; i++) {
+                timeAndMeasurements[i] = file[i].split(";");               
             }
+            for (int i = 0; i < timeAndMeasurements.length; i++) {
+                for (int j = 0; j < timeAndMeasurements[i].length; j++) {
+                    System.out.print(timeAndMeasurements[i][j]);
+                }
+                System.out.println("");
+            }
+            
         } catch (IOException io) {
             System.out.println("error");
         }
