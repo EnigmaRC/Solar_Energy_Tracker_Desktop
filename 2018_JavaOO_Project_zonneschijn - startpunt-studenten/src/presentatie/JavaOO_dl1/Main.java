@@ -13,7 +13,6 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double test = 0;
         DayPrestation vandaag = new DayPrestation();
         vandaag.setMeasurements();
         vandaag.setDayProduction();

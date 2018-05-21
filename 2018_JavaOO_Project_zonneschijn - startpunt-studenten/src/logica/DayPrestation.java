@@ -16,6 +16,7 @@ public class DayPrestation {
     private ArrayList<ProductionUnit> measurements;
     private double highestProduction;
     private double dayProduction;
+    private double co2reduction;
     private LocalDate date;
     private LocalTime firstHour;
     private LocalTime lastHour;
@@ -89,8 +90,12 @@ public class DayPrestation {
         }
     }
 
-    public double setCO2Reduction() {
-        return Helper.round(this.dayProduction * this.SAVEDCO2, 3);
+    /**
+     * Calculates the total amount of CO2 reduction for that day.
+     * @return 
+     */
+    public void setCO2Reduction() {
+        this.co2reduction = Helper.round(this.dayProduction * this.SAVEDCO2, 3);
     }
 
     @Override
@@ -102,7 +107,7 @@ public class DayPrestation {
                 + " uren) \n"
                 + "MAX om " + this.date + " " + this.timeHighestProduction
                 + " => " + this.highestProduction + " kWp \n"
-                + this.setCO2Reduction() + "kg CO2-reductie";
+                + this.co2reduction + "kg CO2-reductie";
     }
 
 }
