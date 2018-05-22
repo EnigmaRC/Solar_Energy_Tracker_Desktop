@@ -41,10 +41,22 @@ public class Axis_1Day extends javax.swing.JPanel {
 
         g.setColor(Color.black);
         for (int i = 1; i < this.unparsedData.length; i++) {
+            int firstHeight;
+            int secondHeight;
             if (this.unparsedData[i].length == 2) {
                 g.drawOval(i * 6, this.height - (int) (Double.parseDouble(this.unparsedData[i][1]) * this.height) - 2, 4, 4);
+                secondHeight = this.height - (int) (Double.parseDouble(this.unparsedData[i][1]) * this.height);
             } else {
                 g.drawOval(i * 6, this.height - 2, 4, 4);
+                secondHeight = this.height;
+            }
+            if (i > 1) {
+                if (this.unparsedData[i - 1].length == 2) {
+                    firstHeight = this.height - (int) (Double.parseDouble(this.unparsedData[i - 1][1]) * this.height);
+                } else {
+                    firstHeight = this.height;
+                }
+                g.drawLine(i * 6 - 4, firstHeight, i * 6 + 2, secondHeight);
             }
         }
     }
