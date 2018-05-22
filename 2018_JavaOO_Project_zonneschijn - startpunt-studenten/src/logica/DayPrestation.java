@@ -37,7 +37,7 @@ public class DayPrestation {
     /**
      * Fills the ArrayList with measurements from throughout the day.
      */
-    public void setMeasurements(String origin) {
+    public void parseMeasurements(String origin) {
         switch (origin) {
             case "dl1":
                 for (String[] DEFAULT_DATA : DataDefault.DEFAULT_DATA) {
@@ -59,6 +59,12 @@ public class DayPrestation {
             break;
         }
     }
+
+    public ArrayList<ProductionUnit> getMeasurements() {
+        return this.measurements;
+    }
+    
+    
 
     /**
      * Gets the hours at which production starts and ends from the ArrayList.
@@ -125,7 +131,8 @@ public class DayPrestation {
         return "Dagproductie van " + this.date + " = " + this.dayProduction
                 + " kW \n \n"
                 + this.firstHour + " - " + this.lastHour + " ("
-                + this.totalTime.getHour() + "." + this.totalTime.getMinute() / 6
+                + this.totalTime.getHour() + "." 
+                + this.totalTime.getMinute() / 6
                 + " uren) \n"
                 + "MAX om " + this.date + " " + this.timeHighestProduction
                 + " => " + this.highestProduction + " kWp \n"
