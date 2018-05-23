@@ -44,7 +44,7 @@ public class Panel_2Days extends javax.swing.JPanel {
             this.width = this.getWidth();
             this.height = this.getHeight();
 
-            for (int i = 0; i < this.firstMeasurements.size(); i++) { // for loop going over all the measurements and plotting them on the graph.
+            for (int i = 0; i < this.firstMeasurements.size(); i++) { // for loop going over all the measurements of the first object and plotting them on the graph.
                 this.g.drawOval(i * 5, this.height - 2 - (int) (this.height * this.firstMeasurements.get(i) / 5), 4, 4);
                 if (i >= 1) {
                     int firstX = i * 5 - 3;
@@ -54,7 +54,8 @@ public class Panel_2Days extends javax.swing.JPanel {
                     this.g.drawLine(firstX, firstY, secondX, secondY);
                 }
             }
-            for (int i = 0; i < this.secondMeasurements.size(); i++) { // for loop going over all the measurements and plotting them on the graph.
+            this.g.setColor(Color.RED);
+            for (int i = 0; i < this.secondMeasurements.size(); i++) { // for loop going over all the measurements of the second object and plotting them on the graph.
                 this.g.drawOval(i * 5, this.height - 2 - (int) (this.height * this.secondMeasurements.get(i) / 5), 4, 4);
                 if (i >= 1) {
                     int firstX = i * 5 - 3;
@@ -83,7 +84,10 @@ public class Panel_2Days extends javax.swing.JPanel {
      * Fills an ArrayList with only the measurements of a certain day, excluding
      * the times. If there is no value, a 0.0 will be added.
      *
-     * @param arr1 String[][] filled with times and their measurement.
+     * @param arr1 String[][] filled with times and their measurement of the
+     * first DayProduction.
+     * @param arr1 String[][] filled with times and their measurement of the
+     * second DayProduction.
      */
     protected void fillMeasurements(String[][] arr1, String[][] arr2) {
 

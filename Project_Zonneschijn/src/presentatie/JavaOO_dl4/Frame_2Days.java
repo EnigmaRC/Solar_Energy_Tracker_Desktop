@@ -440,26 +440,51 @@ public class Frame_2Days extends javax.swing.JFrame {
 
     private void jLabelNext2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNext2MouseClicked
         // TODO add your handling code here:
+        if (this.secondDayProduction.getDate().isBefore(LocalDate.of(2018, 04, 30))) {
+            this.secondDayProduction.setDate(this.secondDayProduction.getDate().plusDays(1));
+            this.jTextFieldDate2.setText(this.secondDayProduction.getDate().toString());
+            this.secondDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate2, this.jTextAreaDayProductionInfo2);
+            this.setValuesForPanel();
+        }
     }//GEN-LAST:event_jLabelNext2MouseClicked
 
     private void jLabelLast2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLast2MouseClicked
         // TODO add your handling code here:
+        this.secondDayProduction.setDate(LocalDate.of(2018, 04, 30));
+        this.jTextFieldDate2.setText(this.secondDayProduction.getDate().toString());
+        this.secondDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate2, this.jTextAreaDayProductionInfo2);
+        this.setValuesForPanel();
     }//GEN-LAST:event_jLabelLast2MouseClicked
 
     private void jLabelPrevious2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPrevious2MouseClicked
         // TODO add your handling code here:
+        if (this.secondDayProduction.getDate().isAfter(LocalDate.of(2017, 07, 03))) {
+            this.secondDayProduction.setDate(this.secondDayProduction.getDate().minusDays(1));
+            this.jTextFieldDate2.setText(this.secondDayProduction.getDate().toString());
+            this.secondDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate2, this.jTextAreaDayProductionInfo2);
+            this.setValuesForPanel();
+        }
     }//GEN-LAST:event_jLabelPrevious2MouseClicked
 
     private void jLabelFirst2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFirst2MouseClicked
         // TODO add your handling code here:
+        this.secondDayProduction.setDate(LocalDate.of(2017, 07, 03));
+        this.jTextFieldDate2.setText(this.secondDayProduction.getDate().toString());
+        this.secondDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate2, this.jTextAreaDayProductionInfo2);
+        this.setValuesForPanel();
     }//GEN-LAST:event_jLabelFirst2MouseClicked
 
     private void jTextFieldDate2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldDate2FocusGained
         // TODO add your handling code here:
+        this.jTextFieldDate2.selectAll();
     }//GEN-LAST:event_jTextFieldDate2FocusGained
 
     private void jTextFieldDate2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldDate2KeyPressed
         // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.secondDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate2, this.jTextAreaDayProductionInfo2);
+            this.setValuesForPanel();
+        }
     }//GEN-LAST:event_jTextFieldDate2KeyPressed
 
     /**
