@@ -59,6 +59,10 @@ public class Panel_navigation extends javax.swing.JPanel {
             for (int i = 0; i <= this.width; i += 60) {
                 this.g.drawLine(i, 0, i, this.height);
             }
+            for (int i = 0; i <= this.height; i += 60) {
+                this.g.drawLine(0, i, this.width, i);
+                
+            }
         }
     }
 

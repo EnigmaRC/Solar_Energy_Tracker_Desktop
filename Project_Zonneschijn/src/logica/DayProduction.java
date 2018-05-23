@@ -211,7 +211,7 @@ public class DayProduction {
                 break;
         }
         String output = "Dagproductie van " + this.date + " = "
-                + this.dailyTotal + "kW \n \n" + this.firstHour + " - "
+                + this.dailyTotal + " kW \n \n" + this.firstHour + " - "
                 + this.lastHour + " (" + this.totalAmountOfHours.getHour()
                 + minutes + " uren)"
                 + "\n" + "MAX om " + this.date + " " + this.dailyTimeOfMaximum
