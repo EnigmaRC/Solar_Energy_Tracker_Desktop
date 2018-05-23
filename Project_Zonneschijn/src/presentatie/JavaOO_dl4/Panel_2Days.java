@@ -42,12 +42,12 @@ public class Panel_2Days extends javax.swing.JPanel {
             this.width = this.getWidth();
             this.height = this.getHeight();
             for (int i = 0; i < this.measurements.size(); i++) { // for loop going over all the measurements and plotting them on the graph.
-                this.g.drawOval(i * 5, this.height - 2 - (int) (this.height * this.measurements.get(i) / 4), 4, 4);
+                this.g.drawOval(i * 5, this.height - 2 - (int) (this.height * this.measurements.get(i) / 5), 4, 4);
                 if (i >= 1) {
                     int firstX = i * 5 - 3;
                     int secondX = i * 5 + 2;
-                    int firstY = this.height - (int) (this.height * this.measurements.get(i - 1) / 4);
-                    int secondY = this.height - (int) (this.height * this.measurements.get(i) / 4);
+                    int firstY = this.height - (int) (this.height * this.measurements.get(i - 1) / 5);
+                    int secondY = this.height - (int) (this.height * this.measurements.get(i) / 5);
                     this.g.drawLine(firstX, firstY, secondX, secondY);
                 }
             }

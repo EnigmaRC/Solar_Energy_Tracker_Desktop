@@ -13,7 +13,8 @@ import logica.DayProduction;
  */
 public class Frame_2Days extends javax.swing.JFrame {
 
-    private DayProduction dayProduction;
+    private DayProduction firstDayProduction;
+    private DayProduction secondDayProduction;
 
     /**
      * Creates new form Frame_1Day
@@ -21,9 +22,8 @@ public class Frame_2Days extends javax.swing.JFrame {
     public Frame_2Days() {
         initComponents();
         LocalDate date = LocalDate.of(2017, 07, 03); // Sets the starting date on 2017-07-03.
-        this.dayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-        this.panel_2Days1.fillMeasurements(this.dayProduction.fillCustomData());
-        System.out.println(this.panel_2Days1.getHeight());
+        this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
+        this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
     }
 
     /**
@@ -43,21 +43,21 @@ public class Frame_2Days extends javax.swing.JFrame {
         jLabelLast1 = new javax.swing.JLabel();
         jLabelPrevious1 = new javax.swing.JLabel();
         jLabelFirst1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        jLabel_YAxisLeft6 = new javax.swing.JLabel();
+        jLabel_YAxisLeft5 = new javax.swing.JLabel();
+        jLabel_YAxisLeft4 = new javax.swing.JLabel();
+        jLabel_YAxisLeft3 = new javax.swing.JLabel();
+        jLabel_YAxisLeft2 = new javax.swing.JLabel();
+        jLabel_YAxisLeft1 = new javax.swing.JLabel();
+        jLabel_XAxis1 = new javax.swing.JLabel();
+        jLabel_XAxis2 = new javax.swing.JLabel();
+        jLabel_XAxis3 = new javax.swing.JLabel();
+        jLabel_XAxis4 = new javax.swing.JLabel();
+        jLabel_XAxis5 = new javax.swing.JLabel();
+        jLabel_XAxis6 = new javax.swing.JLabel();
+        jLabel_XAxis7 = new javax.swing.JLabel();
+        jLabel_XAxis8 = new javax.swing.JLabel();
+        jLabel_XAxis9 = new javax.swing.JLabel();
         panel_2Days1 = new presentatie.JavaOO_dl4.Panel_2Days();
         jLabelNext2 = new javax.swing.JLabel();
         jLabelLast2 = new javax.swing.JLabel();
@@ -65,12 +65,14 @@ public class Frame_2Days extends javax.swing.JFrame {
         jLabelFirst2 = new javax.swing.JLabel();
         jLabelDate2 = new javax.swing.JLabel();
         jTextFieldDate2 = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        jLabel_YAxisRight6 = new javax.swing.JLabel();
+        jLabel_YAxisRight5 = new javax.swing.JLabel();
+        jLabel_YAxisRight4 = new javax.swing.JLabel();
+        jLabel_YAxisRight3 = new javax.swing.JLabel();
+        jLabel_YAxisRight2 = new javax.swing.JLabel();
+        jLabel_YAxisRight1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAreaDayProductionInfo1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -106,7 +108,7 @@ public class Frame_2Days extends javax.swing.JFrame {
         jLabelLast1.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelLast1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelLast1MouseClicked(evt);
+                jLabelLast11MouseClicked(evt);
             }
         });
 
@@ -126,37 +128,35 @@ public class Frame_2Days extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("5.0");
+        jLabel_YAxisLeft6.setText("5.0");
 
-        jLabel2.setText("4.0");
+        jLabel_YAxisLeft5.setText("4.0");
 
-        jLabel3.setText("3.0");
+        jLabel_YAxisLeft4.setText("3.0");
 
-        jLabel4.setText("2.0");
+        jLabel_YAxisLeft3.setText("2.0");
 
-        jLabel5.setText("1.0");
+        jLabel_YAxisLeft2.setText("1.0");
 
-        jLabel7.setText("0.0");
+        jLabel_YAxisLeft1.setText("0.0");
 
-        jLabel6.setText("00:00");
+        jLabel_XAxis1.setText("00:00");
 
-        jLabel8.setText("03:00");
+        jLabel_XAxis2.setText("03:00");
 
-        jLabel9.setText("06:00");
+        jLabel_XAxis3.setText("06:00");
 
-        jLabel10.setText("09:00");
+        jLabel_XAxis4.setText("09:00");
 
-        jLabel11.setText("12:00");
+        jLabel_XAxis5.setText("12:00");
 
-        jLabel12.setText("15:00");
+        jLabel_XAxis6.setText("15:00");
 
-        jLabel13.setText("18:00");
+        jLabel_XAxis7.setText("18:00");
 
-        jLabel14.setText("21:00");
+        jLabel_XAxis8.setText("21:00");
 
-        jLabel15.setText("24:00");
-
-        panel_2Days1.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel_XAxis9.setText("24:00");
 
         javax.swing.GroupLayout panel_2Days1Layout = new javax.swing.GroupLayout(panel_2Days1);
         panel_2Days1.setLayout(panel_2Days1Layout);
@@ -216,68 +216,26 @@ public class Frame_2Days extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setText("5.0");
+        jLabel_YAxisRight6.setText("5.0");
 
-        jLabel17.setText("4.0");
+        jLabel_YAxisRight5.setText("4.0");
 
-        jLabel18.setText("3.0");
+        jLabel_YAxisRight4.setText("3.0");
 
-        jLabel19.setText("2.0");
+        jLabel_YAxisRight3.setText("2.0");
 
-        jLabel20.setText("1.0");
+        jLabel_YAxisRight2.setText("1.0");
 
-        jLabel21.setText("0.0");
+        jLabel_YAxisRight1.setText("0.0");
+
+        jTextAreaDayProductionInfo1.setColumns(20);
+        jTextAreaDayProductionInfo1.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaDayProductionInfo1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 824, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel8)
-                                .addGap(29, 29, 29)
-                                .addComponent(jLabel9)
-                                .addGap(28, 28, 28)
-                                .addComponent(jLabel10)
-                                .addGap(26, 26, 26)
-                                .addComponent(jLabel11)
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel12)
-                                .addGap(25, 25, 25)
-                                .addComponent(jLabel13)
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabel14)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel15))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(panel_2Days1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(91, 91, 91)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,6 +268,54 @@ public class Frame_2Days extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabelLast2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(101, 101, 101))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel_YAxisLeft6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxisLeft5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxisLeft4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxisLeft3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxisLeft2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxisLeft1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel_XAxis1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel_XAxis2)
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel_XAxis3)
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel_XAxis4)
+                                .addGap(26, 26, 26)
+                                .addComponent(jLabel_XAxis5)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel_XAxis6)
+                                .addGap(25, 25, 25)
+                                .addComponent(jLabel_XAxis7)
+                                .addGap(32, 32, 32)
+                                .addComponent(jLabel_XAxis8)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel_XAxis9))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(panel_2Days1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel_YAxisRight6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel_YAxisRight5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel_YAxisRight4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel_YAxisRight3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel_YAxisRight2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel_YAxisRight1, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,44 +343,46 @@ public class Frame_2Days extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(jLabel_YAxisLeft6)
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel2)
+                        .addComponent(jLabel_YAxisLeft5)
                         .addGap(44, 44, 44)
-                        .addComponent(jLabel3)
+                        .addComponent(jLabel_YAxisLeft4)
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel4)
+                        .addComponent(jLabel_YAxisLeft3)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel5)
+                        .addComponent(jLabel_YAxisLeft2)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel7))
+                        .addComponent(jLabel_YAxisLeft1))
                     .addComponent(panel_2Days1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel16)
+                        .addComponent(jLabel_YAxisRight6)
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel17)
+                        .addComponent(jLabel_YAxisRight5)
                         .addGap(44, 44, 44)
-                        .addComponent(jLabel18)
+                        .addComponent(jLabel_YAxisRight4)
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel19)
+                        .addComponent(jLabel_YAxisRight3)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel20)
+                        .addComponent(jLabel_YAxisRight2)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel21)))
+                        .addComponent(jLabel_YAxisRight1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15))
+                    .addComponent(jLabel_XAxis1)
+                    .addComponent(jLabel_XAxis2)
+                    .addComponent(jLabel_XAxis3)
+                    .addComponent(jLabel_XAxis4)
+                    .addComponent(jLabel_XAxis5)
+                    .addComponent(jLabel_XAxis6)
+                    .addComponent(jLabel_XAxis7)
+                    .addComponent(jLabel_XAxis8)
+                    .addComponent(jLabel_XAxis9))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
@@ -387,45 +395,45 @@ public class Frame_2Days extends javax.swing.JFrame {
 
     private void jLabelNext1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNext1MouseClicked
         // TODO add your handling code here:
-        if (this.dayProduction.getDate().isBefore(LocalDate.of(2018, 04, 30))) {
-            this.dayProduction.setDate(this.dayProduction.getDate().plusDays(1));
-            this.jTextFieldDate1.setText(this.dayProduction.getDate().toString());
-            this.dayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-            this.panel_2Days1.fillMeasurements(this.dayProduction.fillCustomData());
+        if (this.firstDayProduction.getDate().isBefore(LocalDate.of(2018, 04, 30))) {
+            this.firstDayProduction.setDate(this.firstDayProduction.getDate().plusDays(1));
+            this.jTextFieldDate1.setText(this.firstDayProduction.getDate().toString());
+            this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
+            this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
         }
     }//GEN-LAST:event_jLabelNext1MouseClicked
 
-    private void jLabelLast1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLast1MouseClicked
+    private void jLabelLast11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLast11MouseClicked
         // TODO add your handling code here:
-        this.dayProduction.setDate(LocalDate.of(2018, 04, 30));
-        this.jTextFieldDate1.setText(this.dayProduction.getDate().toString());
-        this.dayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-        this.panel_2Days1.fillMeasurements(this.dayProduction.fillCustomData());
-    }//GEN-LAST:event_jLabelLast1MouseClicked
+        this.firstDayProduction.setDate(LocalDate.of(2018, 04, 30));
+        this.jTextFieldDate1.setText(this.firstDayProduction.getDate().toString());
+        this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
+        this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
+    }//GEN-LAST:event_jLabelLast11MouseClicked
 
     private void jLabelPrevious1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPrevious1MouseClicked
         // TODO add your handling code here:
-        if (this.dayProduction.getDate().isAfter(LocalDate.of(2017, 07, 03))) {
-            this.dayProduction.setDate(this.dayProduction.getDate().minusDays(1));
-            this.jTextFieldDate1.setText(this.dayProduction.getDate().toString());
-            this.dayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-            this.panel_2Days1.fillMeasurements(this.dayProduction.fillCustomData());
+        if (this.firstDayProduction.getDate().isAfter(LocalDate.of(2017, 07, 03))) {
+            this.firstDayProduction.setDate(this.firstDayProduction.getDate().minusDays(1));
+            this.jTextFieldDate1.setText(this.firstDayProduction.getDate().toString());
+            this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
+            this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
         }
     }//GEN-LAST:event_jLabelPrevious1MouseClicked
 
     private void jLabelFirst1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFirst1MouseClicked
         // TODO add your handling code here:
-        this.dayProduction.setDate(LocalDate.of(2017, 07, 03));
-        this.jTextFieldDate1.setText(this.dayProduction.getDate().toString());
-        this.dayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-        this.panel_2Days1.fillMeasurements(this.dayProduction.fillCustomData());
+        this.firstDayProduction.setDate(LocalDate.of(2017, 07, 03));
+        this.jTextFieldDate1.setText(this.firstDayProduction.getDate().toString());
+        this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
+        this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
     }//GEN-LAST:event_jLabelFirst1MouseClicked
 
     private void jTextFieldDate1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldDate1KeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            this.dayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-            this.panel_2Days1.fillMeasurements(this.dayProduction.fillCustomData());
+            this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
+            this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
         }
     }//GEN-LAST:event_jTextFieldDate1KeyPressed
 
@@ -521,27 +529,6 @@ public class Frame_2Days extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelDate1;
     private javax.swing.JLabel jLabelDate2;
     private javax.swing.JLabel jLabelFirst1;
@@ -552,8 +539,31 @@ public class Frame_2Days extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNext2;
     private javax.swing.JLabel jLabelPrevious1;
     private javax.swing.JLabel jLabelPrevious2;
+    private javax.swing.JLabel jLabel_XAxis1;
+    private javax.swing.JLabel jLabel_XAxis2;
+    private javax.swing.JLabel jLabel_XAxis3;
+    private javax.swing.JLabel jLabel_XAxis4;
+    private javax.swing.JLabel jLabel_XAxis5;
+    private javax.swing.JLabel jLabel_XAxis6;
+    private javax.swing.JLabel jLabel_XAxis7;
+    private javax.swing.JLabel jLabel_XAxis8;
+    private javax.swing.JLabel jLabel_XAxis9;
+    private javax.swing.JLabel jLabel_YAxisLeft1;
+    private javax.swing.JLabel jLabel_YAxisLeft2;
+    private javax.swing.JLabel jLabel_YAxisLeft3;
+    private javax.swing.JLabel jLabel_YAxisLeft4;
+    private javax.swing.JLabel jLabel_YAxisLeft5;
+    private javax.swing.JLabel jLabel_YAxisLeft6;
+    private javax.swing.JLabel jLabel_YAxisRight1;
+    private javax.swing.JLabel jLabel_YAxisRight2;
+    private javax.swing.JLabel jLabel_YAxisRight3;
+    private javax.swing.JLabel jLabel_YAxisRight4;
+    private javax.swing.JLabel jLabel_YAxisRight5;
+    private javax.swing.JLabel jLabel_YAxisRight6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextAreaDayProductionInfo;
+    private javax.swing.JTextArea jTextAreaDayProductionInfo1;
     private javax.swing.JTextField jTextFieldDate1;
     private javax.swing.JTextField jTextFieldDate2;
     private presentatie.JavaOO_dl4.Panel_2Days panel_2Days1;

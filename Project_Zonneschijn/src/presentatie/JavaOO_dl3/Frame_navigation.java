@@ -45,21 +45,21 @@ public class Frame_navigation extends javax.swing.JFrame {
         jLabelPrevious = new javax.swing.JLabel();
         jLabelFirst = new javax.swing.JLabel();
         panel_navigation1 = new presentatie.JavaOO_dl3.Panel_navigation();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        jLabel_YAxis6 = new javax.swing.JLabel();
+        jLabel_YAxis5 = new javax.swing.JLabel();
+        jLabel_YAxis4 = new javax.swing.JLabel();
+        jLabel_YAxis3 = new javax.swing.JLabel();
+        jLabel_YAxis2 = new javax.swing.JLabel();
+        jLabel_YAxis1 = new javax.swing.JLabel();
+        jLabel_XAxis1 = new javax.swing.JLabel();
+        jLabel_XAxis2 = new javax.swing.JLabel();
+        jLabel_XAxis3 = new javax.swing.JLabel();
+        jLabel_XAxis4 = new javax.swing.JLabel();
+        jLabel_XAxis5 = new javax.swing.JLabel();
+        jLabel_XAxis6 = new javax.swing.JLabel();
+        jLabel_XAxis7 = new javax.swing.JLabel();
+        jLabel_XAxis8 = new javax.swing.JLabel();
+        jLabel_XAxis9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -126,35 +126,35 @@ public class Frame_navigation extends javax.swing.JFrame {
             .addGap(0, 298, Short.MAX_VALUE)
         );
 
-        jLabel1.setText("4.0");
+        jLabel_YAxis6.setText("4.0");
 
-        jLabel2.setText("3.2");
+        jLabel_YAxis5.setText("3.2");
 
-        jLabel3.setText("2.4");
+        jLabel_YAxis4.setText("2.4");
 
-        jLabel4.setText("1.6");
+        jLabel_YAxis3.setText("1.6");
 
-        jLabel5.setText("0.8");
+        jLabel_YAxis2.setText("0.8");
 
-        jLabel7.setText("0.0");
+        jLabel_YAxis1.setText("0.0");
 
-        jLabel6.setText("00:00");
+        jLabel_XAxis1.setText("00:00");
 
-        jLabel8.setText("03:00");
+        jLabel_XAxis2.setText("03:00");
 
-        jLabel9.setText("06:00");
+        jLabel_XAxis3.setText("06:00");
 
-        jLabel10.setText("09:00");
+        jLabel_XAxis4.setText("09:00");
 
-        jLabel11.setText("12:00");
+        jLabel_XAxis5.setText("12:00");
 
-        jLabel12.setText("15:00");
+        jLabel_XAxis6.setText("15:00");
 
-        jLabel13.setText("18:00");
+        jLabel_XAxis7.setText("18:00");
 
-        jLabel14.setText("21:00");
+        jLabel_XAxis8.setText("21:00");
 
-        jLabel15.setText("24:00");
+        jLabel_XAxis9.setText("24:00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,32 +184,32 @@ public class Frame_navigation extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel_YAxis6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxis5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxis4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxis3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxis2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_YAxis1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addComponent(jLabel_XAxis1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel8)
+                                .addComponent(jLabel_XAxis2)
                                 .addGap(29, 29, 29)
-                                .addComponent(jLabel9)
+                                .addComponent(jLabel_XAxis3)
                                 .addGap(28, 28, 28)
-                                .addComponent(jLabel10)
+                                .addComponent(jLabel_XAxis4)
                                 .addGap(26, 26, 26)
-                                .addComponent(jLabel11)
+                                .addComponent(jLabel_XAxis5)
                                 .addGap(30, 30, 30)
-                                .addComponent(jLabel12)
+                                .addComponent(jLabel_XAxis6)
                                 .addGap(25, 25, 25)
-                                .addComponent(jLabel13)
+                                .addComponent(jLabel_XAxis7)
                                 .addGap(32, 32, 32)
-                                .addComponent(jLabel14)
+                                .addComponent(jLabel_XAxis8)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel15))
+                                .addComponent(jLabel_XAxis9))
                             .addComponent(panel_navigation1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
@@ -228,29 +228,29 @@ public class Frame_navigation extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(jLabel_YAxis6)
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel2)
+                        .addComponent(jLabel_YAxis5)
                         .addGap(44, 44, 44)
-                        .addComponent(jLabel3)
+                        .addComponent(jLabel_YAxis4)
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel4)
+                        .addComponent(jLabel_YAxis3)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel5)
+                        .addComponent(jLabel_YAxis2)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel7))
+                        .addComponent(jLabel_YAxis1))
                     .addComponent(panel_navigation1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15))
+                    .addComponent(jLabel_XAxis1)
+                    .addComponent(jLabel_XAxis2)
+                    .addComponent(jLabel_XAxis3)
+                    .addComponent(jLabel_XAxis4)
+                    .addComponent(jLabel_XAxis5)
+                    .addComponent(jLabel_XAxis6)
+                    .addComponent(jLabel_XAxis7)
+                    .addComponent(jLabel_XAxis8)
+                    .addComponent(jLabel_XAxis9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -364,26 +364,26 @@ public class Frame_navigation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelDate;
     private javax.swing.JLabel jLabelFirst;
     private javax.swing.JLabel jLabelLast;
     private javax.swing.JLabel jLabelNext;
     private javax.swing.JLabel jLabelPrevious;
+    private javax.swing.JLabel jLabel_XAxis1;
+    private javax.swing.JLabel jLabel_XAxis2;
+    private javax.swing.JLabel jLabel_XAxis3;
+    private javax.swing.JLabel jLabel_XAxis4;
+    private javax.swing.JLabel jLabel_XAxis5;
+    private javax.swing.JLabel jLabel_XAxis6;
+    private javax.swing.JLabel jLabel_XAxis7;
+    private javax.swing.JLabel jLabel_XAxis8;
+    private javax.swing.JLabel jLabel_XAxis9;
+    private javax.swing.JLabel jLabel_YAxis1;
+    private javax.swing.JLabel jLabel_YAxis2;
+    private javax.swing.JLabel jLabel_YAxis3;
+    private javax.swing.JLabel jLabel_YAxis4;
+    private javax.swing.JLabel jLabel_YAxis5;
+    private javax.swing.JLabel jLabel_YAxis6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaDayProductionInfo;
     private javax.swing.JTextField jTextFieldDate;

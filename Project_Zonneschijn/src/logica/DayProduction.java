@@ -112,7 +112,7 @@ public class DayProduction {
     public String[][] fillCustomData() {
         String filePath = this.date.toString();
         try {
-            String[] file = TextFile.readLines("data/Metingen " + filePath.substring(0, 7) + "/Energie_en_vermogen_Dag_" + filePath + ".CSV");
+            String[] file = TextFile.readLines("data/Metingen " + filePath.substring(0, 7) + "/Energie_en_vermogen_Dag_" + filePath + ".csv");
             for (int i = 0; i < file.length; i++) {
                 file[i] = file[i].replaceAll(",", ".");
             }
