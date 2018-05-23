@@ -96,7 +96,7 @@ public class Frame_2Days extends javax.swing.JFrame {
         jTextAreaDayProductionInfo.setRows(5);
         jScrollPane1.setViewportView(jTextAreaDayProductionInfo);
 
-        jLabelNext1.setIcon(new ImageIcon("images/next.PNG"));
+        jLabelNext1.setIcon(new ImageIcon("images/next.png"));
         jLabelNext1.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelNext1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -104,7 +104,7 @@ public class Frame_2Days extends javax.swing.JFrame {
             }
         });
 
-        jLabelLast1.setIcon(new ImageIcon("images/last.PNG"));
+        jLabelLast1.setIcon(new ImageIcon("images/last.png"));
         jLabelLast1.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelLast1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -112,7 +112,7 @@ public class Frame_2Days extends javax.swing.JFrame {
             }
         });
 
-        jLabelPrevious1.setIcon(new ImageIcon("images/previous.PNG"));
+        jLabelPrevious1.setIcon(new ImageIcon("images/previous.png"));
         jLabelPrevious1.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelPrevious1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -120,7 +120,7 @@ public class Frame_2Days extends javax.swing.JFrame {
             }
         });
 
-        jLabelFirst1.setIcon(new ImageIcon("images/first.PNG"));
+        jLabelFirst1.setIcon(new ImageIcon("images/first.png"));
         jLabelFirst1.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelFirst1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -169,7 +169,7 @@ public class Frame_2Days extends javax.swing.JFrame {
             .addGap(0, 298, Short.MAX_VALUE)
         );
 
-        jLabelNext2.setIcon(new ImageIcon("images/next.PNG"));
+        jLabelNext2.setIcon(new ImageIcon("images/next.png"));
         jLabelNext2.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelNext2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -177,7 +177,7 @@ public class Frame_2Days extends javax.swing.JFrame {
             }
         });
 
-        jLabelLast2.setIcon(new ImageIcon("images/last.PNG"));
+        jLabelLast2.setIcon(new ImageIcon("images/last.png"));
         jLabelLast2.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelLast2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -185,7 +185,7 @@ public class Frame_2Days extends javax.swing.JFrame {
             }
         });
 
-        jLabelPrevious2.setIcon(new ImageIcon("images/previous.PNG"));
+        jLabelPrevious2.setIcon(new ImageIcon("images/previous.png"));
         jLabelPrevious2.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelPrevious2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -193,7 +193,7 @@ public class Frame_2Days extends javax.swing.JFrame {
             }
         });
 
-        jLabelFirst2.setIcon(new ImageIcon("images/first.PNG"));
+        jLabelFirst2.setIcon(new ImageIcon("images/first.png"));
         jLabelFirst2.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelFirst2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

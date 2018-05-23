@@ -83,7 +83,7 @@ public class Frame_navigation extends javax.swing.JFrame {
         jTextAreaDayProductionInfo.setRows(5);
         jScrollPane1.setViewportView(jTextAreaDayProductionInfo);
 
-        jLabelNext.setIcon(new ImageIcon("images/next.PNG"));
+        jLabelNext.setIcon(new ImageIcon("images/next.png"));
         jLabelNext.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelNext.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -91,7 +91,7 @@ public class Frame_navigation extends javax.swing.JFrame {
             }
         });
 
-        jLabelLast.setIcon(new ImageIcon("images/last.PNG"));
+        jLabelLast.setIcon(new ImageIcon("images/last.png"));
         jLabelLast.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelLast.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -99,7 +99,7 @@ public class Frame_navigation extends javax.swing.JFrame {
             }
         });
 
-        jLabelPrevious.setIcon(new ImageIcon("images/previous.PNG"));
+        jLabelPrevious.setIcon(new ImageIcon("images/previous.png"));
         jLabelPrevious.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelPrevious.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,7 +107,7 @@ public class Frame_navigation extends javax.swing.JFrame {
             }
         });
 
-        jLabelFirst.setIcon(new ImageIcon("images/first.PNG"));
+        jLabelFirst.setIcon(new ImageIcon("images/first.png"));
         jLabelFirst.setPreferredSize(new java.awt.Dimension(25, 25));
         jLabelFirst.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
