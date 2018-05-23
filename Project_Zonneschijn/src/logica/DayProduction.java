@@ -151,14 +151,6 @@ public class DayProduction {
             hours--;
         }
         this.totalAmountOfHours = LocalTime.of(hours, minutes);
-        /*
-        int hours = 0;
-        int minutes = (int) this.firstHour.until(this.lastHour, MINUTES);
-        if (minutes % 60 == 0) {
-            hours++;
-            minutes -= 60;
-        }
-        this.totalAmountOfHours = LocalTime.of(hours, minutes);*/
     }
 
     private void setCO2Reduction() {
