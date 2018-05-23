@@ -12,19 +12,20 @@ import javax.swing.BorderFactory;
  */
 public class Panel_2Days extends javax.swing.JPanel {
 
-    private ArrayList<Double> measurements;
+    private ArrayList<Double> firstMeasurements;
+    private ArrayList<Double> secondMeasurements;
     private Graphics g;
-    private double maximum;
     private int width;
     private int height;
 
     /**
-     * Creates new form Panel_1Day
+     * Creates new form Panel_2Days
      */
     public Panel_2Days() {
         initComponents();
         this.setBorder(BorderFactory.createLineBorder(Color.black));
-        this.measurements = new ArrayList<>();
+        this.firstMeasurements = new ArrayList<>();
+        this.secondMeasurements = new ArrayList<>();
     }
 
     @Override
@@ -38,16 +39,28 @@ public class Panel_2Days extends javax.swing.JPanel {
     }
 
     private void drawGraph() {
-        if (!this.measurements.isEmpty()) {
+        if (!this.firstMeasurements.isEmpty() && !this.secondMeasurements.isEmpty()) {
+
             this.width = this.getWidth();
             this.height = this.getHeight();
-            for (int i = 0; i < this.measurements.size(); i++) { // for loop going over all the measurements and plotting them on the graph.
-                this.g.drawOval(i * 5, this.height - 2 - (int) (this.height * this.measurements.get(i) / 5), 4, 4);
+
+            for (int i = 0; i < this.firstMeasurements.size(); i++) { // for loop going over all the measurements and plotting them on the graph.
+                this.g.drawOval(i * 5, this.height - 2 - (int) (this.height * this.firstMeasurements.get(i) / 5), 4, 4);
                 if (i >= 1) {
                     int firstX = i * 5 - 3;
                     int secondX = i * 5 + 2;
-                    int firstY = this.height - (int) (this.height * this.measurements.get(i - 1) / 5);
-                    int secondY = this.height - (int) (this.height * this.measurements.get(i) / 5);
+                    int firstY = this.height - (int) (this.height * this.firstMeasurements.get(i - 1) / 5);
+                    int secondY = this.height - (int) (this.height * this.firstMeasurements.get(i) / 5);
+                    this.g.drawLine(firstX, firstY, secondX, secondY);
+                }
+            }
+            for (int i = 0; i < this.secondMeasurements.size(); i++) { // for loop going over all the measurements and plotting them on the graph.
+                this.g.drawOval(i * 5, this.height - 2 - (int) (this.height * this.secondMeasurements.get(i) / 5), 4, 4);
+                if (i >= 1) {
+                    int firstX = i * 5 - 3;
+                    int secondX = i * 5 + 2;
+                    int firstY = this.height - (int) (this.height * this.secondMeasurements.get(i - 1) / 5);
+                    int secondY = this.height - (int) (this.height * this.secondMeasurements.get(i) / 5);
                     this.g.drawLine(firstX, firstY, secondX, secondY);
                 }
             }
@@ -56,13 +69,12 @@ public class Panel_2Days extends javax.swing.JPanel {
     }
 
     private void drawAxis() {
-        if (!this.measurements.isEmpty()) {
+        if (!this.firstMeasurements.isEmpty() && !this.secondMeasurements.isEmpty()) {
             for (int i = 0; i <= this.width; i += 60) {
                 this.g.drawLine(i, 0, i, this.height);
             }
             for (int i = 0; i <= this.height; i += 60) {
                 this.g.drawLine(0, i, this.width, i);
-                
             }
         }
     }
@@ -71,22 +83,29 @@ public class Panel_2Days extends javax.swing.JPanel {
      * Fills an ArrayList with only the measurements of a certain day, excluding
      * the times. If there is no value, a 0.0 will be added.
      *
-     * @param arr String[][] filled with times and their measurement.
+     * @param arr1 String[][] filled with times and their measurement.
      */
-    protected void fillMeasurements(String[][] arr) {
-        this.measurements = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].length >= 2 && Double.parseDouble(arr[i][1]) > 0) {
-                double measurement = Double.parseDouble(arr[i][1]);
-                this.measurements.add(measurement);
+    protected void fillMeasurements(String[][] arr1, String[][] arr2) {
+
+        this.firstMeasurements = new ArrayList<>();
+        this.secondMeasurements = new ArrayList<>();
+
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i].length >= 2 && Double.parseDouble(arr1[i][1]) > 0) {
+                double measurement = Double.parseDouble(arr1[i][1]);
+                this.firstMeasurements.add(measurement);
             } else {
-                this.measurements.add(0.0);
+                this.firstMeasurements.add(0.0);
             }
         }
-    }
-
-    public void setMaximum(double maximum) {
-        this.maximum = maximum;
+        for (int i = 0; i < arr2.length; i++) {
+            if (arr2[i].length >= 2 && Double.parseDouble(arr2[i][1]) > 0) {
+                double measurement = Double.parseDouble(arr2[i][1]);
+                this.secondMeasurements.add(measurement);
+            } else {
+                this.secondMeasurements.add(0.0);
+            }
+        }
     }
 
     /**
@@ -112,11 +131,6 @@ public class Panel_2Days extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    void ffillMeasurements(String[][] fillCustomData) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

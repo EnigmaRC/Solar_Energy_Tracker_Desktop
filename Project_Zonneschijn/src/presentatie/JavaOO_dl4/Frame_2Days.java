@@ -22,8 +22,9 @@ public class Frame_2Days extends javax.swing.JFrame {
     public Frame_2Days() {
         initComponents();
         LocalDate date = LocalDate.of(2017, 07, 03); // Sets the starting date on 2017-07-03.
-        this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-        this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
+        this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo1);
+        this.secondDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate2, this.jTextAreaDayProductionInfo2);
+        this.setValuesForPanel();
     }
 
     /**
@@ -38,7 +39,7 @@ public class Frame_2Days extends javax.swing.JFrame {
         jLabelDate1 = new javax.swing.JLabel();
         jTextFieldDate1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaDayProductionInfo = new javax.swing.JTextArea();
+        jTextAreaDayProductionInfo1 = new javax.swing.JTextArea();
         jLabelNext1 = new javax.swing.JLabel();
         jLabelLast1 = new javax.swing.JLabel();
         jLabelPrevious1 = new javax.swing.JLabel();
@@ -72,7 +73,7 @@ public class Frame_2Days extends javax.swing.JFrame {
         jLabel_YAxisRight2 = new javax.swing.JLabel();
         jLabel_YAxisRight1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextAreaDayProductionInfo1 = new javax.swing.JTextArea();
+        jTextAreaDayProductionInfo2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -92,9 +93,9 @@ public class Frame_2Days extends javax.swing.JFrame {
             }
         });
 
-        jTextAreaDayProductionInfo.setColumns(20);
-        jTextAreaDayProductionInfo.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaDayProductionInfo);
+        jTextAreaDayProductionInfo1.setColumns(20);
+        jTextAreaDayProductionInfo1.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaDayProductionInfo1);
 
         jLabelNext1.setIcon(new ImageIcon("images/next.png"));
         jLabelNext1.setPreferredSize(new java.awt.Dimension(25, 25));
@@ -228,9 +229,9 @@ public class Frame_2Days extends javax.swing.JFrame {
 
         jLabel_YAxisRight1.setText("0.0");
 
-        jTextAreaDayProductionInfo1.setColumns(20);
-        jTextAreaDayProductionInfo1.setRows(5);
-        jScrollPane2.setViewportView(jTextAreaDayProductionInfo1);
+        jTextAreaDayProductionInfo2.setColumns(20);
+        jTextAreaDayProductionInfo2.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaDayProductionInfo2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -398,8 +399,8 @@ public class Frame_2Days extends javax.swing.JFrame {
         if (this.firstDayProduction.getDate().isBefore(LocalDate.of(2018, 04, 30))) {
             this.firstDayProduction.setDate(this.firstDayProduction.getDate().plusDays(1));
             this.jTextFieldDate1.setText(this.firstDayProduction.getDate().toString());
-            this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-            this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
+            this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo1);
+            this.setValuesForPanel();
         }
     }//GEN-LAST:event_jLabelNext1MouseClicked
 
@@ -407,8 +408,8 @@ public class Frame_2Days extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.firstDayProduction.setDate(LocalDate.of(2018, 04, 30));
         this.jTextFieldDate1.setText(this.firstDayProduction.getDate().toString());
-        this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-        this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
+        this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo1);
+        this.setValuesForPanel();
     }//GEN-LAST:event_jLabelLast11MouseClicked
 
     private void jLabelPrevious1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPrevious1MouseClicked
@@ -416,8 +417,8 @@ public class Frame_2Days extends javax.swing.JFrame {
         if (this.firstDayProduction.getDate().isAfter(LocalDate.of(2017, 07, 03))) {
             this.firstDayProduction.setDate(this.firstDayProduction.getDate().minusDays(1));
             this.jTextFieldDate1.setText(this.firstDayProduction.getDate().toString());
-            this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-            this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
+            this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo1);
+            this.setValuesForPanel();
         }
     }//GEN-LAST:event_jLabelPrevious1MouseClicked
 
@@ -425,15 +426,15 @@ public class Frame_2Days extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.firstDayProduction.setDate(LocalDate.of(2017, 07, 03));
         this.jTextFieldDate1.setText(this.firstDayProduction.getDate().toString());
-        this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-        this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
+        this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo1);
+        this.setValuesForPanel();
     }//GEN-LAST:event_jLabelFirst1MouseClicked
 
     private void jTextFieldDate1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldDate1KeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo);
-            this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData());
+            this.firstDayProduction = this.createAndDisplayDayProduction(this.jTextFieldDate1, this.jTextAreaDayProductionInfo1);
+            this.setValuesForPanel();
         }
     }//GEN-LAST:event_jTextFieldDate1KeyPressed
 
@@ -476,6 +477,10 @@ public class Frame_2Days extends javax.swing.JFrame {
         tempDayProduction.setCustomData();
         textArea.setText(tempDayProduction.toString());
         return tempDayProduction;
+    }
+
+    private void setValuesForPanel() {
+        this.panel_2Days1.fillMeasurements(this.firstDayProduction.fillCustomData(), this.secondDayProduction.fillCustomData());
     }
 
     /**
@@ -562,8 +567,8 @@ public class Frame_2Days extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_YAxisRight6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextAreaDayProductionInfo;
     private javax.swing.JTextArea jTextAreaDayProductionInfo1;
+    private javax.swing.JTextArea jTextAreaDayProductionInfo2;
     private javax.swing.JTextField jTextFieldDate1;
     private javax.swing.JTextField jTextFieldDate2;
     private presentatie.JavaOO_dl4.Panel_2Days panel_2Days1;

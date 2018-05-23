@@ -18,7 +18,7 @@ public class Panel_navigation extends javax.swing.JPanel {
     private int height;
 
     /**
-     * Creates new form Panel_1Day
+     * Creates new form Panel_navigation
      */
     public Panel_navigation() {
         initComponents();
@@ -82,10 +82,6 @@ public class Panel_navigation extends javax.swing.JPanel {
                 this.measurements.add(0.0);
             }
         }
-    }
-
-    public void setMaximum(double maximum) {
-        this.maximum = maximum;
     }
 
     /**
