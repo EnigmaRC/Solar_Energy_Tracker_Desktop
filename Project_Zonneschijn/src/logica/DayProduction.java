@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
-import static java.time.temporal.ChronoUnit.HOURS;
-import static java.time.temporal.ChronoUnit.MINUTES;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,10 +34,22 @@ public class DayProduction {
     }
 
     public DayProduction(String date) {
+        String[] dateSplit = date.split("-");
+        String year = dateSplit[0];
+        String month = dateSplit[1];
+        String day = (dateSplit[2]);
+        // Allows for input format to be YYYY-M-D in case of single digit months and/or days.
+        if (Integer.parseInt(month) <= 9 && Integer.parseInt(month) >= 0) {
+            month = "0" + Integer.parseInt(month);
+        }
+        if (Integer.parseInt(day) <= 9 && Integer.parseInt(day) >= 1) {
+            day = "0" + Integer.parseInt(day);
+        }
+        String correctedDate = year + "-" + month + "-" + day;
         try {
-            this.date = LocalDate.parse(date);
+            this.date = LocalDate.parse(correctedDate);
         } catch (DateTimeParseException e) {
-            System.out.println(e.getCause());
+            System.out.println("error");
         }
         this.measurements = new ArrayList();
     }
@@ -115,7 +125,7 @@ public class DayProduction {
             Logger.getLogger(DayProduction.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
-    }    
+    }
 
     private void setDailyTotal() {
         for (ProductionUnit unit : this.measurements) {
@@ -178,8 +188,12 @@ public class DayProduction {
         }
     }
 
-    public double getDailyMaximum() {
-        return dailyMaximum;
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     @Override
@@ -187,13 +201,13 @@ public class DayProduction {
         String minutes = "";
         switch (this.totalAmountOfHours.getMinute()) {
             case 15:
-                minutes = ",25";
+                minutes = ".25";
                 break;
             case 30:
-                minutes = ",5";
+                minutes = ".5";
                 break;
             case 45:
-                minutes = ",75";
+                minutes = ".75";
                 break;
         }
         String output = "Dagproductie van " + this.date + " = "

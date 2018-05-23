@@ -1,6 +1,5 @@
 package presentatie.JavaOO_dl2;
 
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import logica.DayProduction;
@@ -37,6 +36,7 @@ public class Frame_1Day extends javax.swing.JFrame {
         panel_1Day1 = new presentatie.JavaOO_dl2.Panel_1Day();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabelDate.setText("Datum (YYYY-MM-DD):");
 
@@ -67,7 +67,7 @@ public class Frame_1Day extends javax.swing.JFrame {
         );
         panel_1Day1Layout.setVerticalGroup(
             panel_1Day1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 167, Short.MAX_VALUE)
+            .addGap(0, 298, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -77,7 +77,6 @@ public class Frame_1Day extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panel_1Day1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabelDate)
@@ -85,7 +84,8 @@ public class Frame_1Day extends javax.swing.JFrame {
                         .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonProcess)
-                        .addGap(0, 74, Short.MAX_VALUE)))
+                        .addGap(0, 189, Short.MAX_VALUE))
+                    .addComponent(panel_1Day1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -114,9 +114,7 @@ public class Frame_1Day extends javax.swing.JFrame {
     private void jButtonProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProcessActionPerformed
         // TODO add your handling code here:
         this.dayProduction = this.createDayProduction(this.jTextFieldDate, this.jTextAreaDayProductionInfo);
-        this.panel_1Day1.setMaximum(this.dayProduction.getDailyMaximum());
         this.panel_1Day1.fillMeasurements(this.dayProduction.fillCustomData());
-        this.panel_1Day1.drawGraph();
     }//GEN-LAST:event_jButtonProcessActionPerformed
 
     /**

@@ -1,10 +1,6 @@
 package presentatie.JavaOO_dl2;
 
-import be.odisee.ikdoeict.TextFile;
-import java.io.IOException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.time.LocalDate;
 import logica.DayProduction;
 
 /**
@@ -18,9 +14,16 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        DayProduction today = new DayProduction("2018-02-10");
+        String date = "2018-2-10";
+        DayProduction today = new DayProduction(date);
         today.setCustomData();
         System.out.println(today);
+        
+        LocalDate oldDate = today.getDate();
+        LocalDate newDate = oldDate.plusDays(1);
+        DayProduction tomorrow = new DayProduction(newDate.toString());
+        tomorrow.setCustomData();
+        System.out.println(tomorrow);
         
     }
     
