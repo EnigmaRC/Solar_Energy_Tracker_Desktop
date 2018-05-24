@@ -6,10 +6,13 @@ import data.DataDefault;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static jdk.nashorn.tools.ShellFunctions.input;
 
 /**
  *
@@ -54,18 +57,22 @@ public class DayProduction {
         this.measurements = new ArrayList();
     }
 
+    public DayProduction(Date date) {
+        this.date = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        this.measurements = new ArrayList<>();
+    }
+
     public void setDefaultData() {
         this.parseDefaultData();
-        this.setFirstHour();
-        this.setLastHour();
-        this.setDailyTotal();
-        this.setDailyMaximum();
-        this.setCO2Reduction();
-        this.setTotalAmountOfHours();
+        this.calculateStringOutput();
     }
 
     public void setCustomData() {
         this.parseCustomData(this.fillCustomData());
+        this.calculateStringOutput();
+    }
+
+    public void calculateStringOutput() {
         this.setFirstHour();
         this.setLastHour();
         this.setDailyTotal();
@@ -90,7 +97,7 @@ public class DayProduction {
      *
      * @param arr String[][] returned from fillCustomData()
      */
-    private void parseCustomData(String[][] arr) {
+    public void parseCustomData(String[][] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].length >= 2 && Double.parseDouble(arr[i][1]) > 0) {
                 String[] hoursAndMinutes = arr[i][0].split(":"); // splits the string into hours and minutes.
@@ -105,7 +112,7 @@ public class DayProduction {
 
     /**
      * Fills a 2D array with data from a custom date, making use of the
-     * CodeLibrary library to find the required file.
+     * CodeLibrary library to find the required CSV-file.
      *
      * @return String[][] filled with times and their measurement.
      */

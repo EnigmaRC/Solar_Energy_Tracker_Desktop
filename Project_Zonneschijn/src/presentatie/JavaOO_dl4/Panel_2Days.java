@@ -1,10 +1,8 @@
 package presentatie.JavaOO_dl4;
 
-import presentatie.JavaOO_dl3.*;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import javax.swing.BorderFactory;
 
 /**
  *
@@ -23,7 +21,6 @@ public class Panel_2Days extends javax.swing.JPanel {
      */
     public Panel_2Days() {
         initComponents();
-        this.setBorder(BorderFactory.createLineBorder(Color.black));
         this.firstMeasurements = new ArrayList<>();
         this.secondMeasurements = new ArrayList<>();
     }
@@ -86,7 +83,7 @@ public class Panel_2Days extends javax.swing.JPanel {
      *
      * @param arr1 String[][] filled with times and their measurement of the
      * first DayProduction.
-     * @param arr1 String[][] filled with times and their measurement of the
+     * @param arr2 String[][] filled with times and their measurement of the
      * second DayProduction.
      */
     protected void fillMeasurements(String[][] arr1, String[][] arr2) {

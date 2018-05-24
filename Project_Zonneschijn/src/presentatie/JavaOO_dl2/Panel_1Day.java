@@ -3,7 +3,6 @@ package presentatie.JavaOO_dl2;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import javax.swing.BorderFactory;
 
 /**
  *
@@ -19,7 +18,6 @@ public class Panel_1Day extends javax.swing.JPanel {
      */
     public Panel_1Day() {
         initComponents();
-        this.setBorder(BorderFactory.createLineBorder(Color.black));
         this.measurements = new ArrayList<>();
     }
 

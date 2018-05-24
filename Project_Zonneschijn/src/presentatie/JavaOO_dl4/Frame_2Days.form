@@ -361,6 +361,13 @@
       </Properties>
     </Component>
     <Container class="presentatie.JavaOO_dl4.Panel_2Days" name="panel_2Days1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">

@@ -13,7 +13,6 @@ public class Panel_navigation extends javax.swing.JPanel {
 
     private ArrayList<Double> measurements;
     private Graphics g;
-    private double maximum;
     private int width;
     private int height;
 
@@ -22,7 +21,6 @@ public class Panel_navigation extends javax.swing.JPanel {
      */
     public Panel_navigation() {
         initComponents();
-        this.setBorder(BorderFactory.createLineBorder(Color.black));
         this.measurements = new ArrayList<>();
     }
 
@@ -60,8 +58,7 @@ public class Panel_navigation extends javax.swing.JPanel {
                 this.g.drawLine(i, 0, i, this.height);
             }
             for (int i = 0; i <= this.height; i += 60) {
-                this.g.drawLine(0, i, this.width, i);
-                
+                this.g.drawLine(0, i, this.width, i);            
             }
         }
     }

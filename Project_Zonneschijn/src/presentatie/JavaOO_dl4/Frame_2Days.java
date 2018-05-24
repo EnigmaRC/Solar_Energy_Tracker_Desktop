@@ -159,6 +159,8 @@ public class Frame_2Days extends javax.swing.JFrame {
 
         jLabel_XAxis9.setText("24:00");
 
+        panel_2Days1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout panel_2Days1Layout = new javax.swing.GroupLayout(panel_2Days1);
         panel_2Days1.setLayout(panel_2Days1Layout);
         panel_2Days1Layout.setHorizontalGroup(

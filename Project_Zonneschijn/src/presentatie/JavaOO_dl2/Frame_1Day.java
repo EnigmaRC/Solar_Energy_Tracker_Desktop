@@ -59,6 +59,8 @@ public class Frame_1Day extends javax.swing.JFrame {
         jTextAreaDayProductionInfo.setRows(5);
         jScrollPane1.setViewportView(jTextAreaDayProductionInfo);
 
+        panel_1Day1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout panel_1Day1Layout = new javax.swing.GroupLayout(panel_1Day1);
         panel_1Day1.setLayout(panel_1Day1Layout);
         panel_1Day1Layout.setHorizontalGroup(

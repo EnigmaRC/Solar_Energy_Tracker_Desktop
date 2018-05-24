@@ -115,6 +115,8 @@ public class Frame_navigation extends javax.swing.JFrame {
             }
         });
 
+        panel_navigation1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout panel_navigation1Layout = new javax.swing.GroupLayout(panel_navigation1);
         panel_navigation1.setLayout(panel_navigation1Layout);
         panel_navigation1Layout.setHorizontalGroup(
