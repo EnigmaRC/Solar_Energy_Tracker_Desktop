@@ -2,20 +2,20 @@ package presentatie.RelDB;
 
 import java.sql.Time;
 import java.util.List;
-import logica.DataLaag;
+import logica.DataLayer;
 import logica.DayProduction;
-import logica.Installatie;
+import logica.Installation;
 
 /**
  *
  * @author Olivier PC
  */
 public class DB_Gui extends javax.swing.JFrame {
-    
-    private DataLaag db;
-    private List<Installatie> aantalInstallaties;
-    private Installatie installatie;
-    private DayProduction dayproduction;
+
+    private DataLayer db;
+    private List<Installation> allInstallations;
+    private Installation installation;
+    private DayProduction dayProduction;
     private List<Time> times;
     private List<Double> values;
 
@@ -24,8 +24,8 @@ public class DB_Gui extends javax.swing.JFrame {
      */
     public DB_Gui() {
         initComponents();
-        this.db = new DataLaag();
-        this.aantalInstallaties = db.setAantalInstallaties();
+        this.db = new DataLayer();
+        this.allInstallations = db.retrieveAllInstallations();
         this.fillComboBox();
     }
 
@@ -113,26 +113,26 @@ public class DB_Gui extends javax.swing.JFrame {
 
     private void jComboBoxInstallationSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxInstallationSelectionActionPerformed
         // TODO add your handling code here:
-        int systeemID = this.jComboBoxInstallationSelection.getSelectedIndex() + 1;    
-        this.installatie = this.db.setInstallatieDetails(systeemID);
-        this.dayproduction = new DayProduction(this.db.setDayProduction(systeemID).toString());
+        int systeemID = this.jComboBoxInstallationSelection.getSelectedIndex() + 1;
+        this.installation = this.db.retrieveInstallationDetails(systeemID);
+        this.dayProduction = new DayProduction(this.db.setDayProduction(systeemID).toString());
         this.times = this.db.setTimes(systeemID);
         this.values = this.db.setMeasurements(systeemID);
         String[][] combinedValues = this.db.combineTimesAndMeasurements(this.times, this.values);
-        
-        this.dayproduction.parseCustomData(combinedValues);
-        this.dayproduction.calculateStringOutput();
+
+        this.dayProduction.parseCustomData(combinedValues);
+        this.dayProduction.calculateStringOutput();
         this.dB_Graph1.fillMeasurements(values);
-        this.jTextAreaOwnerInfo.setText(this.installatie.toString());
-        this.jTextAreaProductionInfo.setText(this.dayproduction.toString());
+        this.jTextAreaOwnerInfo.setText(this.installation.toString());
+        this.jTextAreaProductionInfo.setText(this.dayProduction.toString());
     }//GEN-LAST:event_jComboBoxInstallationSelectionActionPerformed
 
     private void fillComboBox() {
-        for (int i = 0; i < this.aantalInstallaties.size(); i++) {
-            this.jComboBoxInstallationSelection.insertItemAt(this.aantalInstallaties.get(i).getSysteemID() + ": " + this.aantalInstallaties.get(i).getMerk(), i);
+        for (int i = 0; i < this.allInstallations.size(); i++) {
+            this.jComboBoxInstallationSelection.insertItemAt(this.allInstallations.get(i).getSysteemID() + ": " + this.allInstallations.get(i).getMerk(), i);
         }
     }
-    
+
     /**
      * @param args the command line arguments
      */

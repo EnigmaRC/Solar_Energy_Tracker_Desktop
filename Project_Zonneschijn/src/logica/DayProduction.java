@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static jdk.nashorn.tools.ShellFunctions.input;
 
 /**
  *
@@ -31,11 +30,19 @@ public class DayProduction {
     private LocalTime dailyTimeOfMaximum;
     private LocalTime totalAmountOfHours;
 
+    /**
+     * Makes a new DayProduction based on today's date.
+     */
     public DayProduction() {
         this.date = LocalDate.now();
         this.measurements = new ArrayList<>();
     }
 
+    /**
+     * Makes a new DayProduction based on the entered String.
+     *
+     * @param date
+     */
     public DayProduction(String date) {
         String[] dateSplit = date.split("-");
         String year = dateSplit[0];
@@ -57,21 +64,36 @@ public class DayProduction {
         this.measurements = new ArrayList();
     }
 
+    /**
+     * Makes a new DayProduction based on the entered Date, suited for
+     * functionality with SQL's DATE data type.
+     *
+     * @param date
+     */
     public DayProduction(Date date) {
         this.date = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         this.measurements = new ArrayList<>();
     }
 
+    /**
+     * Method for setting values based on current date.
+     */
     public void setDefaultData() {
         this.parseDefaultData();
         this.calculateStringOutput();
     }
 
+    /**
+     * Method for setting values based on given date.
+     */
     public void setCustomData() {
         this.parseCustomData(this.fillCustomData());
         this.calculateStringOutput();
     }
 
+    /**
+     * Method with the default functions combined.
+     */
     public void calculateStringOutput() {
         this.setFirstHour();
         this.setLastHour();
@@ -134,6 +156,9 @@ public class DayProduction {
         return null;
     }
 
+    /**
+     * Calculates the total amount of energy generated that day.
+     */
     private void setDailyTotal() {
         for (ProductionUnit unit : this.measurements) {
             dailyTotal += unit.getMeasurement();
@@ -141,6 +166,9 @@ public class DayProduction {
         dailyTotal = Helper.round(dailyTotal / 4, 3);
     }
 
+    /**
+     * Finds when production was at its peak and saves the time and value.
+     */
     private void setDailyMaximum() {
         for (ProductionUnit unit : this.measurements) {
             if (unit.getMeasurement() > this.dailyMaximum) {
@@ -150,6 +178,9 @@ public class DayProduction {
         }
     }
 
+    /**
+     * Calculates the total amount of hours the Installation was productive.
+     */
     public void setTotalAmountOfHours() {
         int hours = this.lastHour.getHour() - this.firstHour.getHour();
         int minutes = this.lastHour.getMinute() - this.firstHour.getMinute();
@@ -160,6 +191,9 @@ public class DayProduction {
         this.totalAmountOfHours = LocalTime.of(hours, minutes);
     }
 
+    /**
+     * Calculates the amount of CO2 saved that day.
+     */
     private void setCO2Reduction() {
         this.reducedCO2 = Helper.round(this.dailyTotal * this.CO2REDUCTION, 3);
     }

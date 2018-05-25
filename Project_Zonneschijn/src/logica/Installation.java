@@ -6,7 +6,7 @@ import java.util.Date;
  *
  * @author Olivier PC
  */
-public class Installatie {
+public class Installation {
 
     private int systeemID;
     private String merk;
@@ -21,7 +21,23 @@ public class Installatie {
     private Date installatiedatum;
     private double vermogen;
 
-    public Installatie(int systeemID, String merk, String type, int serienummer, String straat, int huisnummer, int postcode, String gemeente, String naam, String voornaam, Date installatiedatum, double vermogen) {
+    /**
+     * Constructor for creating an installation, based on the database design.
+     *
+     * @param systeemID
+     * @param merk
+     * @param type
+     * @param serienummer
+     * @param straat
+     * @param huisnummer
+     * @param postcode
+     * @param gemeente
+     * @param naam
+     * @param voornaam
+     * @param installatiedatum
+     * @param vermogen
+     */
+    public Installation(int systeemID, String merk, String type, int serienummer, String straat, int huisnummer, int postcode, String gemeente, String naam, String voornaam, Date installatiedatum, double vermogen) {
         this.systeemID = systeemID;
         this.merk = merk;
         this.type = type;
