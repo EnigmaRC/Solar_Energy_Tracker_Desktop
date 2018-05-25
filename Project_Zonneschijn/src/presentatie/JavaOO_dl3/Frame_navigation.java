@@ -6,7 +6,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import logica.DayProduction;
-import presentatie.JavaOO_dl3.Panel_navigation;
 
 /**
  *

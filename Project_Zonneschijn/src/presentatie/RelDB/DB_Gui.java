@@ -16,6 +16,8 @@ public class DB_Gui extends javax.swing.JFrame {
     private List<Installatie> aantalInstallaties;
     private Installatie installatie;
     private DayProduction dayproduction;
+    private List<Time> times;
+    private List<Double> values;
 
     /**
      * Creates new form DB_Gui
@@ -44,6 +46,7 @@ public class DB_Gui extends javax.swing.JFrame {
         dB_Graph1 = new presentatie.RelDB.DB_Graph();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jTextAreaOwnerInfo.setColumns(20);
         jTextAreaOwnerInfo.setRows(5);
@@ -61,16 +64,17 @@ public class DB_Gui extends javax.swing.JFrame {
 
         dB_Graph1.setBackground(new java.awt.Color(255, 255, 255));
         dB_Graph1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        dB_Graph1.setPreferredSize(new java.awt.Dimension(360, 864));
 
         javax.swing.GroupLayout dB_Graph1Layout = new javax.swing.GroupLayout(dB_Graph1);
         dB_Graph1.setLayout(dB_Graph1Layout);
         dB_Graph1Layout.setHorizontalGroup(
             dB_Graph1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 862, Short.MAX_VALUE)
         );
         dB_Graph1Layout.setVerticalGroup(
             dB_Graph1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
+            .addGap(0, 358, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -80,9 +84,9 @@ public class DB_Gui extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dB_Graph1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dB_Graph1, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -96,7 +100,7 @@ public class DB_Gui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jComboBoxInstallationSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dB_Graph1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dB_Graph1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
@@ -109,15 +113,16 @@ public class DB_Gui extends javax.swing.JFrame {
 
     private void jComboBoxInstallationSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxInstallationSelectionActionPerformed
         // TODO add your handling code here:
-        int systeemID = this.jComboBoxInstallationSelection.getSelectedIndex() + 1;
-        
+        int systeemID = this.jComboBoxInstallationSelection.getSelectedIndex() + 1;    
         this.installatie = this.db.setInstallatieDetails(systeemID);
         this.dayproduction = new DayProduction(this.db.setDayProduction(systeemID).toString());
-        List<Time> times = this.db.setTimes(systeemID);
-        List<Double> values = this.db.setMeasurements(systeemID);
-        String[][] combinedValues = this.db.combineTimesAndMeasurements(times, values);
+        this.times = this.db.setTimes(systeemID);
+        this.values = this.db.setMeasurements(systeemID);
+        String[][] combinedValues = this.db.combineTimesAndMeasurements(this.times, this.values);
+        
         this.dayproduction.parseCustomData(combinedValues);
         this.dayproduction.calculateStringOutput();
+        this.dB_Graph1.fillMeasurements(values);
         this.jTextAreaOwnerInfo.setText(this.installatie.toString());
         this.jTextAreaProductionInfo.setText(this.dayproduction.toString());
     }//GEN-LAST:event_jComboBoxInstallationSelectionActionPerformed
